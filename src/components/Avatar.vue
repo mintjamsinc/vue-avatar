@@ -74,7 +74,7 @@ export default {
 			}
 
 			if (vm.item) {
-				return vm.item.hasThumbnail;
+				return vm.item.thumbnailURL;
 			}
 
 			return '';

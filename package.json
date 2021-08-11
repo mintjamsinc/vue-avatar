@@ -1,6 +1,6 @@
 {
   "name": "@mintjamsinc/vue-avatar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A reusable avatar component for Vue.js 2.x used by webtop applications.",
   "main": "dist/bundle.common.js",
   "scripts": {
