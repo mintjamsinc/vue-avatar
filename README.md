@@ -1,5 +1,5 @@
 # vue-avatar
-A reusable avatar component for Vue.js 2.x used by webtop applications.
+A reusable Avatar component for Vue.js 2.x used by webtop applications.
 
 ## Installation
 
