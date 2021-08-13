@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2021 MintJams Inc. Licensed under MIT License. -->
+
 <template>
 	<div class="avatar" :class="{'border border-black-50 text-black-50': (!!task && !hasImage)}">
 		<div v-if="hasImage" class="content content-image" v-lazy:background-image="imageURL"></div>
