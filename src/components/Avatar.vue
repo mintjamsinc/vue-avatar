@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2021 MintJams Inc. Licensed under MIT License. -->
 
 <template>
-	<div class="avatar" :class="{'border border-black-50 text-black-50': (!!task && !hasImage) || (!!memo && !hasImage)}">
+	<div class="avatar">
 		<div v-if="hasImage" class="content content-image" v-lazy:background-image="imageURL"></div>
 		<div v-if="!hasImage" class="content content-icon" :class="colorClasses"><i :class="iconClasses"></i></div>
 		<div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1;">
