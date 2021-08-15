@@ -122,7 +122,7 @@ export default {
 			let vm = this;
 
 			if (vm.authorizable) {
-				return 'fas fa-user-friends';
+				return '';
 			}
 
 			if (vm.item) {
