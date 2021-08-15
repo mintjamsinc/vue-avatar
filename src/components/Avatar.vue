@@ -40,17 +40,37 @@ export default {
 		vm.ui = new UI();
 	},
 	computed: {
+		authorizableInstance() {
+			let vm = this;
+			if (vm.authorizable) {
+				if (vm.authorizable.$data) {
+					return vm.authorizable;
+				}
+				return window.Webtop.userClient.newAuthorizable(vm.authorizable);
+			}
+			return undefined;
+		},
+		itemInstance() {
+			let vm = this;
+			if (vm.item) {
+				if (vm.item.$data) {
+					return vm.item;
+				}
+				return window.Webtop.cmsClient.newItem(vm.authorizable);
+			}
+			return undefined;
+		},
 		hasImage() {
 			let vm = this;
 
 			if (vm.authorizable) {
-				if (!vm.authorizable.isGroup) {
+				if (!vm.authorizableInstance.isGroup) {
 					return true;
 				}
 			}
 
 			if (vm.item) {
-				if (!vm.item.isCollection && vm.item.hasThumbnail) {
+				if (!vm.itemInstance.isCollection && vm.itemInstance.hasThumbnail) {
 					return true;
 				}
 			}
@@ -61,12 +81,12 @@ export default {
 			let vm = this;
 
 			if (vm.authorizable) {
-				let photoURL = vm.authorizable.photoURL;
+				let photoURL = vm.authorizableInstance.photoURL;
 				if (photoURL) {
 					return photoURL;
 				}
 
-				let hash = XXH.h64(vm.authorizable.id, 1).toString(16);
+				let hash = XXH.h64(vm.authorizableInstance.id, 1).toString(16);
 				let icon = new Identicon(hash, {
 					background: [222, 226, 230, 255],
 					margin: 0.2,
@@ -76,7 +96,7 @@ export default {
 			}
 
 			if (vm.item) {
-				return vm.item.thumbnailURL;
+				return vm.itemInstance.thumbnailURL;
 			}
 
 			return '';
@@ -89,7 +109,7 @@ export default {
 			}
 
 			if (vm.item) {
-				return Files.iconClasses(vm.item);
+				return Files.iconClasses(vm.itemInstance);
 			}
 
 			if (vm.task) {
@@ -106,11 +126,11 @@ export default {
 			}
 
 			if (vm.item) {
-				return Files.colorClasses(vm.item);
+				return Files.colorClasses(vm.itemInstance);
 			}
 
 			if (vm.task) {
-				return 'far fa-sticky-note';
+				return '';
 			}
 
 			return '';
