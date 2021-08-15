@@ -56,7 +56,7 @@ export default {
 				if (vm.item.$data) {
 					return vm.item;
 				}
-				return window.Webtop.cmsClient.newItem(vm.authorizable);
+				return window.Webtop.cmsClient.newItem(vm.item);
 			}
 			return undefined;
 		},
