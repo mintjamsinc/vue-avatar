@@ -1,3 +1,5 @@
+<img src="https://www.mintjams.jp/img/cr.svg" alt ="" width="64">
+
 # vue-avatar
 A reusable Avatar component for Vue.js 2.x used by webtop applications.
 
