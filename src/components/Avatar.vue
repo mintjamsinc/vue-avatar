@@ -13,6 +13,7 @@
 <script>
 import Identicon from 'identicon.js';
 import XXH from 'xxhashjs';
+import lazy from '@mintjamsinc/vue-lazy';
 import commons from '@mintjamsinc/webtop-app-commons';
 const {Files} = commons;
 
@@ -30,6 +31,9 @@ export default {
 		'memo': {
 			'type': Object,
 		},
+	},
+	directives: {
+		lazy,
 	},
 	data() {
 		return {
