@@ -13,7 +13,7 @@
 <script>
 import Identicon from 'identicon.js';
 import XXH from 'xxhashjs';
-import lazy from '@mintjamsinc/vue-lazy';
+import {lazy} from '@mintjamsinc/vue-lazy';
 import commons from '@mintjamsinc/webtop-app-commons';
 const {Files} = commons;
 
