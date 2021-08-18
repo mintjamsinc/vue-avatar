@@ -31,6 +31,9 @@ export default {
 		'memo': {
 			'type': Object,
 		},
+		'icon': {
+			'type': String,
+		},
 	},
 	directives: {
 		lazy,
@@ -39,12 +42,6 @@ export default {
 		return {
 			'ui': null
 		};
-	},
-	created() {
-		let vm = this;
-		class UI {
-		}
-		vm.ui = new UI();
 	},
 	computed: {
 		authorizableInstance() {
@@ -127,6 +124,10 @@ export default {
 				return 'far fa-sticky-note';
 			}
 
+			if (vm.icon) {
+				return vm.icon;
+			}
+
 			return '';
 		},
 		colorClasses() {
@@ -138,14 +139,6 @@ export default {
 
 			if (vm.item) {
 				return Files.colorClasses(vm.itemInstance);
-			}
-
-			if (vm.task) {
-				return '';
-			}
-
-			if (vm.memo) {
-				return '';
 			}
 
 			return '';
