@@ -12,7 +12,7 @@
 
 <script>
 import Identicon from 'identicon.js';
-import XXH from 'xxhashjs';
+import sha256 from 'crypto-js/sha256';
 import {lazy} from '@mintjamsinc/vue-lazy';
 import commons from '@mintjamsinc/webtop-app-commons';
 const {Files} = commons;
@@ -90,7 +90,7 @@ export default {
 					return photoURL;
 				}
 
-				let hash = XXH.h64(vm.authorizableInstance.id, 1).toString(16);
+				let hash = sha256(vm.authorizableInstance.id);
 				let icon = new Identicon(hash, {
 					background: [222, 226, 230, 255],
 					margin: 0.2,

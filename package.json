@@ -1,6 +1,6 @@
 {
   "name": "@mintjamsinc/vue-avatar",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A reusable Avatar component for Vue.js 2.x used by webtop applications.",
   "main": "dist/bundle.common.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "@vue/cli-plugin-eslint": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
     "babel-eslint": "^10.1.0",
+    "crypto-js": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "identicon.js": "^2.3.3",
@@ -36,7 +37,6 @@
     "sass": "^1.37.5",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.14",
-    "xxhashjs": "^0.2.2"
+    "vue-template-compiler": "^2.6.14"
   }
 }
