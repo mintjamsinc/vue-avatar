@@ -90,7 +90,7 @@ export default {
 					return photoURL;
 				}
 
-				let hash = sha256(vm.authorizableInstance.id);
+				let hash = sha256(vm.authorizableInstance.id).toString();
 				let icon = new Identicon(hash, {
 					background: [222, 226, 230, 255],
 					margin: 0.2,
