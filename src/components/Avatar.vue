@@ -34,6 +34,9 @@ export default {
 		'icon': {
 			'type': String,
 		},
+		'identifier': {
+			'type': String,
+		},
 	},
 	directives: {
 		lazy,
@@ -79,6 +82,10 @@ export default {
 				}
 			}
 
+			if (vm.identifier) {
+				return true;
+			}
+
 			return false;
 		},
 		imageURL() {
@@ -101,6 +108,16 @@ export default {
 
 			if (vm.item) {
 				return vm.itemInstance.thumbnailURL;
+			}
+
+			if (vm.identifier) {
+				let hash = sha256(vm.identifier).toString();
+				let icon = new Identicon(hash, {
+					background: [222, 226, 230, 255],
+					margin: 0.2,
+					format: 'svg',
+				}).toString();
+				return 'data:image/svg+xml;base64,' + icon;
 			}
 
 			return '';
