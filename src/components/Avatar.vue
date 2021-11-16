@@ -37,6 +37,9 @@ export default {
 		'identifier': {
 			'type': String,
 		},
+		'image': {
+			'type': String,
+		},
 	},
 	directives: {
 		lazy,
@@ -82,6 +85,10 @@ export default {
 				}
 			}
 
+			if (vm.image) {
+				return true;
+			}
+
 			if (vm.identifier) {
 				return true;
 			}
@@ -108,6 +115,10 @@ export default {
 
 			if (vm.item) {
 				return vm.itemInstance.thumbnailURL;
+			}
+
+			if (vm.image) {
+				return vm.image;
 			}
 
 			if (vm.identifier) {
