@@ -2,8 +2,8 @@
 
 <template>
 	<div class="avatar">
-		<div v-if="hasImage && lazy" class="content content-image" v-lazy:background-image="imageURL"></div>
-		<div v-if="hasImage && !lazy" class="content content-image" style="{'background-image': cssImageURL}"></div>
+		<div v-if="hasImage && lazyImage" class="content content-image" v-lazy:background-image="imageURL"></div>
+		<div v-if="hasImage && !lazyImage" class="content content-image" style="{'background-image': cssImageURL}"></div>
 		<div v-if="!hasImage" class="content content-icon" :class="colorClasses"><i :class="iconClasses"></i></div>
 		<div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1;">
 			<slot></slot>
@@ -41,7 +41,7 @@ export default {
 		'image': {
 			'type': String,
 		},
-		'lazy': {
+		'lazyImage': {
 			'type': Boolean,
 			'default': true,
 		},
