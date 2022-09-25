@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import Avatar from './components/Avatar.vue';
 
-const version = '1.10.1';
+const version = '1.10.2';
 
 const compatible = (/^2\./).test(Vue.version);
 if (!compatible) {

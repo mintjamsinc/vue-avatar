@@ -85,8 +85,13 @@ export default {
 			}
 
 			if (vm.item) {
-				if (!vm.itemInstance.isCollection && vm.itemInstance.hasThumbnail) {
-					return true;
+				if (!vm.itemInstance.isCollection) {
+					if (vm.itemInstance.hasThumbnail) {
+						return true;
+					}
+					if (vm.itemInstance.mimeType.startsWith('image/')) {
+						return true;
+					}
 				}
 			}
 
